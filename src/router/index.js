@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Ajustes from "../views/Ajustes.vue";
 import Hidratacao from "../views/Hidratacao.vue";
 import Vacinacao from "../views/Vacinacao.vue";
+import Drogas from "../views/Drogas.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: "/vacinacao",
     name: "Hidratação",
     component: Vacinacao,
+  },
+  {
+    path: "/drogas",
+    name: "Drogas",
+    component: Drogas,
   },
   {
     path: "/about",

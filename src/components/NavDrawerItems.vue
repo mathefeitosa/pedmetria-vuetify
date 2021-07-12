@@ -40,6 +40,11 @@
             icon: "mdi-needle",
             link: "/vacinacao",
           },
+          {
+            title: "Drogas",
+            icon: "mdi-pill",
+            link: "/drogas",
+          },
         ],
       };
     },
