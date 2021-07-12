@@ -15,25 +15,6 @@
           label="Tipo do Potássio"
           :items="['10%', '19,1%']"
         ></v-select>
-        <v-divider class="mt-3 mb-3" />
-        <v-data-iterator :items="volumesTabela" hide-default-footer>
-          <template v-slot:header>
-            <v-row class="font-weight-bold">
-              <v-col>Item</v-col>
-              <v-col>Volume</v-col>
-            </v-row>
-          </template>
-          <template v-slot:default="props">
-            <v-row v-for="(item, index) in props.items" v-bind:key="index">
-              <v-col>
-                {{ item.tipo }}
-              </v-col>
-              <v-col> {{ item.volume }} {{ item.unidade }} </v-col>
-              <v-col> </v-col>
-            </v-row>
-          </template>
-        </v-data-iterator>
-        <v-divider class="mt-3 mb-3" />
         <v-select
           :error="alertaPrescricao"
           v-model="tipoTomada"
@@ -41,14 +22,35 @@
           :items="['6/6h', '8/8h', '12/12h']"
         >
         </v-select>
-
-        <v-alert v-show="alertaPrescricao" color="warning">
-          O volume do SG 5% passou de 500 ml por tomada! Verifique a
-          disponibilidade de recipientes grandes.
+      </v-card-text>
+      <v-card-text>
+        <v-data-iterator :items="volumesTabela" hide-default-footer>
+          <template v-slot:header>
+            <v-row class="font-weight-bold text-center">
+              <v-col class="text-right">Item</v-col>
+              <v-col class="text-left">Volume</v-col>
+            </v-row>
+          </template>
+          <template v-slot:default="props">
+            <v-row v-for="(item, index) in props.items" v-bind:key="index">
+              <v-col class="text-right">
+                {{ item.tipo }}
+              </v-col>
+              <v-col class="text-left">
+                {{ item.volume }} {{ item.unidade }}
+              </v-col>
+            </v-row>
+          </template>
+        </v-data-iterator>
+      </v-card-text>
+      <v-card-text>
+        <v-alert v-show="alertaPrescricao" color="deep-orange accent-1">
+          <p>O volume do SG 5% passou de 500 ml por tomada!</p>
+          <p>Verifique a disponibilidade de recipientes grandes!</p>
         </v-alert>
       </v-card-text>
       <v-card-text class="grey lighten-1">
-        <p><b>Prescrição:</b></p>
+        <p class="text-overline"><b>Prescrição:</b></p>
         <p>{{ prescricao }}</p>
       </v-card-text>
     </v-card>
