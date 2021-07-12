@@ -1,6 +1,6 @@
 # PedMetria
 
-- Aplicativo que auxilia em cálculos médicos rotineiros em pediatria.
+- Aaplicativo que auxilia em cálculos médicos rotineiros em pediatria.
 
 ## Como executar o projeto
 
