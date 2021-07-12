@@ -15,7 +15,7 @@
       <v-card-text>
         <v-data-iterator
           :items="dadosTabela"
-          items-per-page="100"
+          :items-per-page="100"
           hide-default-footer
         >
           <template v-slot:header>

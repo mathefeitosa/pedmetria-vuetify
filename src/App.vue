@@ -1,6 +1,12 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" fixed dark app>
+    <v-navigation-drawer
+      v-model="drawer"
+      :hide-overlay="true"
+      temporary
+      dark
+      app
+    >
       <nav-drawer-items></nav-drawer-items>
     </v-navigation-drawer>
 
@@ -12,7 +18,7 @@
       :color="navColor"
       dark
     >
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>PedMetria</v-toolbar-title>
 
       <template v-slot:extension>
@@ -33,7 +39,7 @@
     components: { SubAppBar, NavDrawerItems },
     data() {
       return {
-        drawer: null,
+        drawer: false,
       };
     },
     computed: {

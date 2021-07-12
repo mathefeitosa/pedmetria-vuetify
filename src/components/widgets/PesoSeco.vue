@@ -35,6 +35,7 @@
     data() {
       return {
         snackbar: false,
+        timeout: 1000,
       };
     },
   };

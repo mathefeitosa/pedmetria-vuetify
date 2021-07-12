@@ -10,7 +10,9 @@
   import EmConstrucao from "../components/widgets/EmConstrucao.vue";
   export default {
     components: { EmConstrucao },
-    data() {},
+    data() {
+      return {};
+    },
   };
 </script>
 
